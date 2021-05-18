@@ -1,0 +1,15 @@
+{
+  "name": "ileeto",
+  "version": "1.0.0",
+  "description": "Ileeto Shopping",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "Naeem Ullah",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
+}
