@@ -5,6 +5,7 @@ import {
     CardContent,
     Input
 } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
     return (
@@ -30,7 +31,7 @@ export const Login = () => {
 
                 <CardActions className="footer">
                     <div className="forgotPassword">
-                        <p>Not a member? Sign Up</p>
+                        <p>Not a member? <Link to='/register'>Sign Up</Link></p>
                         <p>Forgot Password?</p>
                     </div>
                     <button className="login__btn">Sign In</button>
