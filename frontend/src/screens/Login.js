@@ -32,7 +32,7 @@ export const Login = () => {
                 <CardActions className="footer">
                     <div className="forgotPassword">
                         <p>Not a member? <Link to='/register'>Sign Up</Link></p>
-                        <p>Forgot Password?</p>
+                        <Link>Forgot Password?</Link>
                     </div>
                     <button className="login__btn">Sign In</button>
                 </CardActions>
