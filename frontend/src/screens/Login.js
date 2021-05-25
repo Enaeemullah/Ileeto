@@ -1,6 +1,6 @@
 import "./Login.css";
 import Card from "@material-ui/core/Card";
-import { Button, CardActions, CardContent } from "@material-ui/core";
+import { Button, CardActions, CardContent, Input } from "@material-ui/core";
 
 export const Login = () => {
     return (
@@ -13,8 +13,10 @@ export const Login = () => {
                     <div className="logo__container">
                         <p className="logo__typo">ILEETO</p>
                     </div>
-                    <p>Email</p>
-                    <p>Password</p>
+                    <p style={{ margin: 0 }}>Email</p>
+                    <Input className='input__field' autoFocus='true' />
+                    <p style={{ margin: 0 }}>Password</p>
+                    <Input className='input__field' />
                 </CardContent>
                 <hr />
                 <CardActions className="footer">
@@ -22,7 +24,7 @@ export const Login = () => {
                         <p>Not a member? Sign Up</p>
                         <p>Forgot Password?</p>
                     </div>
-                    <Button>Sign In</Button>
+                    <button className="login__btn">Sign In</button>
                 </CardActions>
             </Card>
         </div>

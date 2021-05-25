@@ -51,6 +51,26 @@
   margin-bottom: 20px;
 }
 
+.input__field {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.login__btn {
+  border-radius: 30px;
+  background-color: white;
+  border-width: 1px;
+  font-size: 20px;
+  width: 50%;
+  height: 40px;
+}
+
+.login__btn:hover {
+  background-color: #343a40;
+  color: white;
+}
+
 @media (max-width: 760px) {
   .card__container {
     flex: 1;
