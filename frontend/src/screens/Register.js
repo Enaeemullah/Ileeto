@@ -6,38 +6,34 @@ import {
     Input
 } from "@material-ui/core";
 
-export const Login = () => {
+export const Register = () => {
     return (
         <div className="container">
-
             <Card className="card__container">
-
                 <div className="header">
-                    <h3 className='heading'>Sign In</h3>
+                    <h3 className='heading'>REGISTER</h3>
                 </div>
-
                 <CardContent className="content-container">
                     <div className="logo__container">
                         <p className="logo__typo">ILEETO</p>
                     </div>
-                    <p style={{ margin: 0 }}>Email</p>
+                    <p style={{ margin: 0 }}>Username</p>
                     <Input className='input__field' autoFocus='true' />
+                    <p style={{ margin: 0 }}>Email</p>
+                    <Input className='input__field' />
                     <p style={{ margin: 0 }}>Password</p>
                     <Input className='input__field' />
+                    <p style={{ margin: 0 }}>Confirm Password</p>
+                    <Input className='input__field' />
                 </CardContent>
-
                 <hr />
-
                 <CardActions className="footer">
                     <div className="forgotPassword">
-                        <p>Not a member? Sign Up</p>
-                        <p>Forgot Password?</p>
+                        <p>Already have an account? Sign in</p>
                     </div>
-                    <button className="login__btn">Sign In</button>
+                    <button className="login__btn">Register</button>
                 </CardActions>
-
             </Card>
-
         </div>
     );
 };
