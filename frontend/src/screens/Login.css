@@ -10,14 +10,6 @@
   font-family: "Gill Sans";
 }
 
-.card__container {
-  display: flex;
-  flex: 0.5;
-  flex-direction: column;
-  border-radius: 100px;
-  /* background-color: red; */
-}
-
 .header {
   background-color: #343a40;
   height: 60px;
