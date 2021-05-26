@@ -22,19 +22,19 @@ const ProductSchema = new mongoose.Schema({
         required: true,
     },
     price: {
-        type: String,
+        type: Double,
         required: true,
     },
     countInStock: {
-        type: String,
+        type: Integer,
         required: true,
     },
     rating: {
-        type: String,
+        type: Double,
         required: true,
     },
     numReviews: {
-        type: String,
+        type: Integer,
         required: true,
     }
 });
