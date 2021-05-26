@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export const Register = () => {
     return (
-        <div className="container">
+        <div className="container__main">
             <Card className="card__container">
                 <div className="header">
                     <h3 className='heading'>REGISTER</h3>
