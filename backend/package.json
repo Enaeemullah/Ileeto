@@ -1,15 +1,18 @@
 {
-  "name": "ileeto",
+  "name": "todolist-backend",
   "version": "1.0.0",
-  "description": "Ileeto Shopping",
+  "description": "todolist backend",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node index",
+    "server": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Naeem Ullah",
-  "license": "MIT",
+  "author": "osama",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
   }
 }
