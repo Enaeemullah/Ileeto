@@ -24,7 +24,7 @@ export const Login = () => {
                     <p style={{ margin: 0 }}>Email</p>
                     <Input className='input__field' autoFocus='true' />
                     <p style={{ margin: 0 }}>Password</p>
-                    <Input className='input__field' />
+                    <Input type='password' className='input__field' />
                 </CardContent>
 
                 <hr />

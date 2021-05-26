@@ -27,7 +27,7 @@ export const Register = () => {
                     <p style={{ margin: 0 }}>Confirm Password</p>
                     <Input className='input__field' />
                 </CardContent>
-                <hr />
+
                 <CardActions className="footer">
                     <div className="forgotPassword">
                         <p>Already have an account? <Link to="/login">Sign in</Link></p>
