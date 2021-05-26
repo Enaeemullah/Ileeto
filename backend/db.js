@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://osama123:osama123@todolist.p8bpp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoURI = "mongodb+srv://osama123:osama123@ileeto.ixpif.mongodb.net/myDatabase?retryWrites=true&w=majority";
 
 const connectDB = async () => {
     try {
@@ -10,7 +10,7 @@ const connectDB = async () => {
         })
         console.log('MongoDB Connected..!');
     } catch (error) {
-        console.log(error.message);
+        console.log(error.message, "Unable to connect");
         process.exit(1);
     }
 }

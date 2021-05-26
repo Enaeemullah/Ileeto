@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 5000;
 //Middleware to parse body
 app.use(express.json({ extended: false }))
 
-app.get('/', (req, res) => res.send('API Running'));
+app.get('/', (req, res) => res.send('API Running...!'));
 
 //defining the routes
-app.use('/api/todos', require('./Routes/api/todos'));
+app.use('/api/users', require('./Routes/api/users'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
