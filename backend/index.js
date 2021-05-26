@@ -14,5 +14,6 @@ app.get('/', (req, res) => res.send('API Running...!'));
 
 //defining the routes
 app.use('/api/users', require('./Routes/api/users'));
+app.use('/api/products', require('./Routes/api/products'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
