@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import products from '../products'
 
 const ProductScreen = ({ match }) => {
-    const product = products.find((p) => p._id === match.params.id)
+    const [products, setProducts] = useState([])
 
+    useEffect(() => {
+
+        const fetchProducts = () => {
+            fetch('/api/products')
+                .then(res => res.json())
+                .then(jsonRes => setProducts(jsonRes))
+        }
+
+        fetchProducts();
+    }, [])
+
+    const product = products.find((p) => p._id === match.params.id)
+    if (!product) {
+        return (<h1>URL is incorrect</h1>)
+    }
     return <>
         <Link className='btn btn-light my-3' to='/'>
             Go Back
