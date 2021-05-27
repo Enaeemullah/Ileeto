@@ -22,7 +22,7 @@ export const Login = () => {
                         <p className="logo__typo">ILEETO</p>
                     </div>
                     <p style={{ margin: 0 }}>Email</p>
-                    <Input className='input__field' autoFocus='true' />
+                    <Input className='input__field' />
                     <p style={{ margin: 0 }}>Password</p>
                     <Input type='password' className='input__field' />
                 </CardContent>

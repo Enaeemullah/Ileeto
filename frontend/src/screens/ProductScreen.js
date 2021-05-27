@@ -12,6 +12,7 @@ const ProductScreen = ({ match }) => {
             fetch('/api/products')
                 .then(res => res.json())
                 .then(jsonRes => setProducts(jsonRes))
+                .catch(err => console.log(err))
         }
 
         fetchProducts();
