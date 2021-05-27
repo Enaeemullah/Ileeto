@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Todos = require('../../Models/Todos');
+const Users = require('../../Models/Users');
 
 //Code for adding a new todos
 router.post('/', async (req, res) => {
-    const { item, isCompleted } = req.body;
+    const { username, email, password } = req.body;
 
     try {
         // console.log(req.body)
-        let todo = new Todos({
-            item,
-            isCompleted,
+        let user = new Users({
+            username,
+            email,
+            password
         })
-        await todo.save();
-        res.status(200).send('Todo Added');
+        await user.save();
+        res.status(200).send('User Added');
 
     } catch (error) {
         console.log(error.message);
@@ -24,7 +25,7 @@ router.post('/', async (req, res) => {
 // Code for getting all todos
 router.get('/', async (req, res) => {
     try {
-        const todos = await Todos.find();
+        const users = await Todos.find();
         res.send(todos);
     } catch (error) {
         console.log(error.message);
