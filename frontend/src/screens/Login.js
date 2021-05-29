@@ -3,9 +3,12 @@ import Card from "@material-ui/core/Card";
 import {
     CardActions,
     CardContent,
-    Input
+    InputAdornment,
+    TextField
 } from "@material-ui/core";
 import { Link } from 'react-router-dom';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import LockIcon from '@material-ui/icons/Lock';
 
 export const Login = () => {
     return (
@@ -21,10 +24,35 @@ export const Login = () => {
                     <div className="logo__container">
                         <p className="logo__typo">ILEETO</p>
                     </div>
-                    <p style={{ margin: 0 }}>Email</p>
-                    <Input className='input__field' />
-                    <p style={{ margin: 0 }}>Password</p>
-                    <Input type='password' className='input__field' />
+
+                    <TextField
+                        id="standard-basic"
+                        label="Email"
+                        className='input__field'
+                        margin='normal'
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position='start'>
+                                    <MailOutlineIcon />
+                                </InputAdornment>
+                            )
+                        }}
+                    />
+
+                    <TextField
+                        type='password'
+                        id='standard-basic'
+                        label='Password'
+                        className='input__field'
+                        margin='normal'
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position='start'>
+                                    <LockIcon />
+                                </InputAdornment>
+                            )
+                        }}
+                    />
                 </CardContent>
 
                 <hr />

@@ -4,9 +4,13 @@ import Card from "@material-ui/core/Card";
 import {
     CardActions,
     CardContent,
-    Input
+    TextField,
+    InputAdornment
 } from "@material-ui/core";
 import { Link } from 'react-router-dom';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import LockIcon from '@material-ui/icons/Lock';
+import PersonIcon from '@material-ui/icons/Person';
 
 export const Register = () => {
     const [userData, setUserData] = useState({
@@ -58,38 +62,80 @@ export const Register = () => {
                         <div className="logo__container">
                             <p className="logo__typo">ILEETO</p>
                         </div>
-                        <p style={{ margin: 0 }}>Username</p>
-                        <Input
+
+                        <TextField
+                            id="standard-basic"
+                            label="Username"
                             className='input__field'
-                            type='text'
+                            margin='normal'
                             name='username'
+                            required
                             value={username}
                             onChange={e => onChange(e)}
-                            required />
-                        <p style={{ margin: 0 }}>Email</p>
-                        <Input
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <PersonIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
+
+                        <TextField
+                            id="standard-basic"
+                            label="Email"
                             className='input__field'
-                            type='email'
+                            margin='normal'
                             name='email'
+                            required
                             value={email}
                             onChange={e => onChange(e)}
-                            required />
-                        <p style={{ margin: 0 }}>Password</p>
-                        <Input
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <MailOutlineIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
+
+                        <TextField
+                            id="standard-basic"
+                            label="Password"
                             className='input__field'
-                            type='password'
+                            margin='normal'
                             name='password'
+                            required
+                            type='password'
                             value={password}
                             onChange={e => onChange(e)}
-                            required />
-                        <p style={{ margin: 0 }}>Confirm Password</p>
-                        <Input
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <LockIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
+
+                        <TextField
+                            id="standard-basic"
+                            label="Confirm Password"
                             className='input__field'
+                            margin='normal'
                             type='password'
                             name='confirm_password'
+                            required
                             value={confirm_password}
                             onChange={e => onChange(e)}
-                            required />
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <LockIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
                     </CardContent>
 
                     <CardActions className="footer">
