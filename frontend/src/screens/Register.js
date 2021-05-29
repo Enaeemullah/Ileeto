@@ -11,14 +11,24 @@ import { Link } from 'react-router-dom';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockIcon from '@material-ui/icons/Lock';
 import PersonIcon from '@material-ui/icons/Person';
+import Alert from '@material-ui/lab/Alert';
 
 export const Register = () => {
+    const [serRes, setSerRes] = useState({});
     const [userData, setUserData] = useState({
         username: '',
         email: '',
         password: '',
         confirm_password: ''
     })
+
+    let serResAlert;
+    if (serRes.status === 400) {
+        serResAlert = <Alert severity="error">Email is already registered</Alert>
+    }
+    else if (serRes.status === 200) {
+        serResAlert = <Alert severity="success">Account created</Alert>
+    }
 
     const { username, email, password, confirm_password } = userData;
 
@@ -44,15 +54,17 @@ export const Register = () => {
                     password
                 }),
             })
-                .then(res => res.text())
-                .then(text => alert(text))
+                .then(res => setSerRes(res))
                 .catch(err => console.log(err))
             // -----------------------------------------------------
         }
+        console.log(serRes)
     }
 
     return (
+
         <div className="container__main">
+
             <Card className="card__container">
                 <div className="header">
                     <h3 className='heading'>REGISTER</h3>
@@ -62,7 +74,7 @@ export const Register = () => {
                         <div className="logo__container">
                             <p className="logo__typo">ILEETO</p>
                         </div>
-
+                        {serResAlert}
                         <TextField
                             id="standard-basic"
                             label="Username"
