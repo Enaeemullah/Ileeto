@@ -28,11 +28,8 @@ router.post('/', async (req, res) => {
 // Code for getting all todos
 router.get('/', async (req, res) => {
     try {
-        const user = await Users.findOne({ email: req.body.email });
-        if (!user) {
-            return res.status(400).send('This email is not registered')
-        }
-        res.send(user);
+        const users = await Todos.find();
+        res.send(todos);
     } catch (error) {
         console.log(error.message);
         res.status(500).send('Server Error');
