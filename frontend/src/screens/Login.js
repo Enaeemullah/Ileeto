@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import "./Login.css";
 import Card from "@material-ui/core/Card";
 import {
@@ -11,6 +12,19 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockIcon from '@material-ui/icons/Lock';
 
 export const Login = () => {
+    const [userData, setUserData] = useState({
+        email: '',
+        password: ''
+    })
+
+    const { email, password } = userData;
+
+    const onSubmit = e => {
+        e.preventDefault();
+    }
+
+    const onChange = e => setUserData({ ...userData, [e.target.name]: e.target.value })
+
     return (
         <div className="container__main">
 
@@ -19,52 +33,62 @@ export const Login = () => {
                 <div className="header">
                     <h3 className='heading'>Sign In</h3>
                 </div>
+                <form onSubmit={e => onSubmit(e)}>
+                    <CardContent className="content-container">
 
-                <CardContent className="content-container">
-                    <div className="logo__container">
-                        <p className="logo__typo">ILEETO</p>
-                    </div>
+                        <div className="logo__container">
+                            <p className="logo__typo">ILEETO</p>
+                        </div>
 
-                    <TextField
-                        id="standard-basic"
-                        label="Email"
-                        className='input__field'
-                        margin='normal'
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position='start'>
-                                    <MailOutlineIcon />
-                                </InputAdornment>
-                            )
-                        }}
-                    />
+                        <TextField
+                            id="standard-basic"
+                            label="Email"
+                            className='input__field'
+                            margin='normal'
+                            name='email'
+                            value={email}
+                            required
+                            onChange={e => onChange(e)}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <MailOutlineIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
 
-                    <TextField
-                        type='password'
-                        id='standard-basic'
-                        label='Password'
-                        className='input__field'
-                        margin='normal'
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position='start'>
-                                    <LockIcon />
-                                </InputAdornment>
-                            )
-                        }}
-                    />
-                </CardContent>
+                        <TextField
+                            type='password'
+                            id='standard-basic'
+                            label='Password'
+                            className='input__field'
+                            margin='normal'
+                            name='password'
+                            value={password}
+                            required
+                            onChange={e => onChange(e)}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position='start'>
+                                        <LockIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
 
-                <hr />
+                    </CardContent>
 
-                <CardActions className="footer">
-                    <div className="forgotPassword">
-                        <p>Not a member? <Link to='/register'>Sign Up</Link></p>
-                        <Link>Forgot Password?</Link>
-                    </div>
-                    <button className="login__btn">Sign In</button>
-                </CardActions>
+                    <hr />
 
+                    <CardActions className="footer">
+                        <div className="forgotPassword">
+                            <p>Not a member? <Link to='/register'>Sign Up</Link></p>
+                            <Link to='/forgot'>Forgot Password?</Link>
+                        </div>
+                        <button className="login__btn">Sign In</button>
+                    </CardActions>
+                </form>
             </Card>
 
         </div>
