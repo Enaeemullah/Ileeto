@@ -7,8 +7,11 @@ router.post('/', async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        // console.log(req.body)
-        let user = new Users({
+        let user = await Users.findOne({ email })
+        if (user) {
+            return res.status(400).send('Email is already registered')
+        }
+        user = new Users({
             username,
             email,
             password
