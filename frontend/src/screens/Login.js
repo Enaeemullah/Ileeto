@@ -16,11 +16,26 @@ export const Login = () => {
         email: '',
         password: ''
     })
+    const [serRes, setSerRes] = useState({});
 
     const { email, password } = userData;
 
     const onSubmit = e => {
         e.preventDefault();
+        // ---------------- GET Request Here ------------------
+        fetch('http://localhost:5000/api/users', {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
+            body: JSON.stringify({
+                email,
+            }),
+        })
+            .then(res => setSerRes(res))
+            .catch(err => console.log(err))
+        console.log(serRes)
+        // -----------------------------------------------------
     }
 
     const onChange = e => setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -42,6 +57,7 @@ export const Login = () => {
 
                         <TextField
                             id="standard-basic"
+                            type='email'
                             label="Email"
                             className='input__field'
                             margin='normal'

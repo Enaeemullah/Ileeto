@@ -28,8 +28,8 @@ router.post('/', async (req, res) => {
 // Code for getting all todos
 router.get('/', async (req, res) => {
     try {
-        const users = await Todos.find();
-        res.send(todos);
+        const user = await Users.findOne({ email: req.body.email });
+        res.send(user);
     } catch (error) {
         console.log(error.message);
         res.status(500).send('Server Error');

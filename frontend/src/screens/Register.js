@@ -22,7 +22,7 @@ export const Register = () => {
         confirm_password: ''
     })
 
-    let serResAlert;
+    let [serResAlert, setSerResAlert] = useState();
     if (serRes.status === 400) {
         serResAlert = <Alert severity="error">Email is already registered</Alert>
     }
@@ -36,10 +36,10 @@ export const Register = () => {
     const onSubmit = e => {
         e.preventDefault();
         if (password.length < 6) {
-            return alert("Password should be atleast 6 characters")
+            return setSerResAlert(<Alert severity="error">Password should be atleast 6 characters</Alert>)
         }
         if (password !== confirm_password) {
-            return alert('Passwords did not match')
+            return setSerResAlert(<Alert severity='error'>Passwords did not match</Alert>);
         }
         else {
             // ---------------- POST Request Here ------------------
@@ -58,7 +58,7 @@ export const Register = () => {
                 .catch(err => console.log(err))
             // -----------------------------------------------------
         }
-        console.log(serRes)
+
     }
 
     return (
